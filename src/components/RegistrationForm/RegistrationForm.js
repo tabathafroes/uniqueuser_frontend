@@ -90,7 +90,7 @@ function RegistrationForm(props) {
             }
 
             try{
-                await axios.post('http://localhost:8000/usuarios/', payload)
+                await axios.post('http://uniqueuser.herokuapp.com/usuarios/', payload)
                 .then(function (response) {
                     if (response.status === 200) {
                         setState(prevState => ({
