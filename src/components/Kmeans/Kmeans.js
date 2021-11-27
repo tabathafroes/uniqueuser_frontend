@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-function Usuarios(props){
+function Kmeans(props){
 
     const getUsuarios = async () => {
-        const response = await fetch('http://uniqueuser.herokuapp.com/usuarios/buscarScore');
+        const response = await fetch('http://uniqueuser.herokuapp.com/usuarios/buscarKmeans');
         const body = await response.json();
         console.log(body)
         if (response.status !== 200) throw Error(body.message);
@@ -26,8 +26,7 @@ function Usuarios(props){
                     <tr>
                         <th>Nome</th>
                         <th>Email</th>
-                        <th>Hash</th>
-                        <th>Score</th>
+                        <th>Cluster</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,8 +34,7 @@ function Usuarios(props){
                         <tr>
                             <td>{elemento.nome}</td>
                             <td>{elemento.email}</td>
-                            <td>{elemento.hash}</td>
-                            <td>{parseFloat(elemento.score).toFixed(5)}</td>
+                            <td>{elemento.cluster}</td>
                         </tr>
                     ))}
                 </tbody>
@@ -45,4 +43,4 @@ function Usuarios(props){
     )
 }
 
-export default Usuarios
+export default Kmeans
