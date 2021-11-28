@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 function Usuarios(props){
 
     const getUsuarios = async () => {
-        const response = await fetch('http://uniqueuser.herokuapp.com/usuarios/buscarScore');
+        const response = await fetch('https://uniqueuser.herokuapp.com/usuarios/buscarScore');
         const body = await response.json();
         console.log(body)
         if (response.status !== 200) throw Error(body.message);
